@@ -6,10 +6,10 @@ describe("Todo test suite", () => {
     test("should add new todo", () => {
         expect(all.length).toBe(0);
         const date = new Date();
-        const yd = new Date(date);
-        const td = new Date(date);
-        td.setDate(date.getDate() + 1);
-        yd.setDate(date.getDate() - 1);
+        const od = new Date(date);
+        const ud = new Date(date);
+        od.setDate(date.getDate() + 1);
+        ud.setDate(date.getDate() - 1);
         add({
             title: "Todo test",
             completed: false,
@@ -18,12 +18,12 @@ describe("Todo test suite", () => {
         add({
             title: "Todo test",
             completed: false,
-            dueDate: yd.toLocaleDateString("en-CA"),
+            dueDate: od.toLocaleDateString("en-CA"),
         });
         add({
             title: "Todo test",
             completed: false,
-            dueDate: td.toLocaleDateString("en-CA"),
+            dueDate: ud.toLocaleDateString("en-CA"),
     });
     expect(all.length).toBe(3);
     });
